@@ -1,0 +1,23 @@
+<!doctype html>
+<title>Welcome</title>
+<h2>Select a file to upload</h2>
+
+{% if filename %}
+	<div>
+
+		{{predicted}}<br>
+		<img src="{{ url_for('display_image', filename=filename) }}">
+
+	</div>
+{% endif %}
+<form method="post" action="/" enctype="multipart/form-data">
+    <dl>
+		<p>
+			<input type="file" name="file" autocomplete="off" required>
+
+		</p>
+    </dl>
+    <p>
+		<input type="submit" value="Submit">
+	</p>
+</form>
